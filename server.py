@@ -29,7 +29,7 @@ def hello_user(username=None):
     return render_template(
         'user.html',
         username=username,
-        link=links
+        links=links
     )
 
 
