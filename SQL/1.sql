@@ -1,4 +1,4 @@
-CREATE TABLE `shop`.`products` (
+CREATE TABLE `products` (
   `id` INT NOT NULL,
   `title` VARCHAR(45) NULL,
   `price` INT UNSIGNED NULL,
@@ -6,25 +6,25 @@ CREATE TABLE `shop`.`products` (
   `cat_id` INT NULL,
   PRIMARY KEY (`id`));
 
-ALTER TABLE `shop`.`category`
+ALTER TABLE `category`
 CHANGE COLUMN `id` `id` INT(4) NOT NULL AUTO_INCREMENT ;
 
-ALTER TABLE `shop`.`category`
+ALTER TABLE `category`
 CHANGE COLUMN `Title` `title` VARCHAR(50) NULL DEFAULT NULL ,
 CHANGE COLUMN `Description` `description` VARCHAR(1000) NULL DEFAULT NULL ,
 CHANGE COLUMN `Image_URL` `image_url` VARCHAR(1000) NULL DEFAULT NULL ;
 
-ALTER TABLE `shop`.`products`
+ALTER TABLE `products`
 ADD INDEX `fk_category_idx` (`cat_id` ASC);
 ;
-ALTER TABLE `shop`.`products`
+ALTER TABLE `products`
 ADD CONSTRAINT `fk_category`
   FOREIGN KEY (`cat_id`)
-  REFERENCES `shop`.`category` (`id`)
+  REFERENCES `category` (`id`)
   ON DELETE NO ACTION
   ON UPDATE NO ACTION;
 
-CREATE TABLE `shop`.`image` (
+CREATE TABLE `image` (
   `id` INT NOT NULL,
   `title` VARCHAR(100) NULL DEFAULT NULL,
   `url` VARCHAR(255) NOT NULL,
@@ -33,6 +33,6 @@ CREATE TABLE `shop`.`image` (
   INDEX `fk_product_idx` (`product_id` ASC),
   CONSTRAINT `fk_product`
     FOREIGN KEY (`product_id`)
-    REFERENCES `shop`.`products` (`id`)
+    REFERENCES `products` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
