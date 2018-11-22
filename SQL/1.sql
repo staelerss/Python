@@ -6,6 +6,14 @@ CREATE TABLE `products` (
   `cat_id` INT NULL,
   PRIMARY KEY (`id`));
 
+CREATE TABLE `category` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
+  `image_url` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
 ALTER TABLE `category`
 CHANGE COLUMN `id` `id` INT(4) NOT NULL AUTO_INCREMENT ;
 
