@@ -30,7 +30,7 @@ CREATE TABLE `blog` (
   PRIMARY KEY (`id`),
   KEY `fk_blog_products_idx` (`products_id`),
   CONSTRAINT `fk_blog_products` FOREIGN KEY (`products_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,11 +51,11 @@ DROP TABLE IF EXISTS `category`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
+  `image_url` varchar(1000) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `description` varchar(1000) DEFAULT NULL,
-  `image_url` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,7 +64,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'PC parts','All PC components which you will need to build one','https://www.exittechnologies.com/wp-content/uploads/2017/12/pc-components-e1513191836126.jpg');
+INSERT INTO `category` VALUES (1,'https://www.exittechnologies.com/wp-content/uploads/2017/12/pc-components-e1513191836126.jpg','PC parts','All PC components which you will need to build one'),(2,'https://www.geforce.com/sites/default/files-world/attachments/wall-pc-640px.jpg','Moding PC parts','Additional pc parts'),(3,'https://www.geforce.com/sites/default/files-world/attachments/wall-pc-640px.jpg','Moding PC parts','Additional pc parts');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,7 +83,7 @@ CREATE TABLE `image` (
   PRIMARY KEY (`id`),
   KEY `fk_product_idx` (`product_id`),
   CONSTRAINT `fk_product` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,14 +104,14 @@ DROP TABLE IF EXISTS `products`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `title` varchar(45) DEFAULT NULL,
+  `title` varchar(45) CHARACTER SET latin1 DEFAULT NULL,
   `price` int(10) unsigned DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET latin1 DEFAULT NULL,
   `cat_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_category_idx` (`cat_id`),
   CONSTRAINT `fk_category` FOREIGN KEY (`cat_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,4 +132,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-11-29 11:47:30
+-- Dump completed on 2018-11-29 13:02:11
