@@ -1,8 +1,8 @@
-ALTER TABLE `shop`.`category`
+ALTER TABLE `category`
 CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
 
-ALTER TABLE `shop`.`image`
+ALTER TABLE `image`
 CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
 
-ALTER TABLE `shop`.`products`
+ALTER TABLE `products`
 CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
