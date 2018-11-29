@@ -1,3 +1,5 @@
+START TRANSACTION;
+
 ALTER TABLE `category`
 CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
 
@@ -6,3 +8,6 @@ CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
 
 ALTER TABLE `products`
 CHARACTER SET = utf8 , COLLATE = utf8_general_ci ;
+
+COMMT;
+
