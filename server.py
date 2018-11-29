@@ -27,7 +27,7 @@ def index():
 def hello_user(username=None):
     links = generate_links()
     return render_template(
-        'user.html',
+           'user.html',
         username=username,
         links=links
     )
