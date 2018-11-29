@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hello</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Каталог/новости{% endblock %}
+
+{% block content %}
+        <div class="jumbotron">
+              <div class="container">
 {% if username %}
-    <h1>Hello {{ username }}!</h1>
+    <h1 class="display-3">{{ username }}!</h1>
 {% else %}
-    <h2>Country road take me hoooooome!</h2>
+    <h1 class="display-3">Hello world!</h1>
 {% endif %}
-{% include 'links.html' %}
-</body>
-</html>
+{% endblock %}
