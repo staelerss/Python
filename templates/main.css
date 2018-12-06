@@ -9,3 +9,7 @@ ul.navigation {
     background-color: red;
     margin-right: 5px
 }
+
+    .carousel-item > img{
+    height: auto;
+}
