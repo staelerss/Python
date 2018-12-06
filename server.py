@@ -1,5 +1,14 @@
 from flask import Flask, url_for, render_template
+import pymysql
 
+connection =pymysql.connect(
+    host='192.168.33.10',
+    user='remote_user',
+    password='123123',
+    db='shop',
+    charset='utf8mb4',
+    cursorclass=pymysql.cursors.DictCursor
+)
 app = Flask(__name__)
 
 

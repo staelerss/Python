@@ -2,7 +2,7 @@
 - hosts: all
   become: yes
   tasks:
-    - name: Killing ubunutu auto-update script
+    - name: Killing ubuntu auto-update script
       command: pkill --full /usr/bin/unattended-upgrade
       beccome: true
       register: kill_result
