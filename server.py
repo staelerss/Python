@@ -1,6 +1,8 @@
 from flask import Flask, url_for, render_template
 import pymysql
 
+app = Flask(__name__)
+
 connection =pymysql.connect(
     host='192.168.33.10',
     user='remote_user',
@@ -9,7 +11,15 @@ connection =pymysql.connect(
     charset='utf8mb4',
     cursorclass=pymysql.cursors.DictCursor
 )
-app = Flask(__name__)
+
+@app.route('/test/')
+def test():
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM category')
+    result = cursor.fetchall()
+
+    return str(result[0])
+
 
 
 def generate_links():
@@ -17,18 +27,21 @@ def generate_links():
         link_Anatolii = url_for('hello_user', username='Anatolii Host')
         link_index = url_for('index')
         link_Gregg = url_for('hello_user', username="Gregg")
-        links = (
-            ("Anatolii's", link_Anatolii),
-            ("Index's", link_index),
-            ("Gregg's", link_Gregg)
-        )
+        links = {
+            "Anatolii's": link_Anatolii,
+            "Index's": link_index,
+            "Gregg's": link_Gregg,
+        }
     return links
 
 
 @app.route('/')
 def index():
+    cursor = connection.cursor()
+    cursor.execute('SELECT * FROM products')
     links = generate_links()
-    return render_template('index.html', links=links)
+    products = cursor.fetchall()
+    return render_template('index.html', links = links, slides = products)
 
 
 @app.route('/user/')
