@@ -1,0 +1,3 @@
+INSERT INTO `shop`.`image` (`id`, `title`, `url`, `product_id`) VALUES ('1', 'MSI motherboard', 'https://asset.msi.com/resize/image/global/product/five_pictures1_3080_20140205145656.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png', '1');
+INSERT INTO `shop`.`image` (`id`, `title`, `url`, `product_id`) VALUES ('2', 'ASUS GPU', 'https://www.asus.com/media/global/products/DOcsPzALHKfEe9Qq/P_setting_fff_1_90_end_500.png', '2');
+INSERT INTO `shop`.`image` (`id`, `title`, `url`, `product_id`) VALUES ('3', 'RAM', 'https://media.kingston.com/hyperx/product/hx-product-memory-fury-ddr3-red-2kit-zm-lg.jpg', '3');
