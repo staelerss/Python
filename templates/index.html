@@ -19,7 +19,7 @@
                     {% set class = 'active' %}
                 {% endif %}
                 <div class="carousel-item {{ class }}">
-                    <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}">
+                    <img src="{{ slide.image_url }}" alt="{{ slide.image_title }}">
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>{{ slides.title }}</h1>
@@ -44,7 +44,7 @@
         {% for product in slides %}
             <div class="card">
 
-                <img class="card-img-top" src="{{ product.image_src }}" alt="{{ product.image_title }}">
+                <img class="card-img-top" src="{{ product.image_url }}" alt="{{ product.image_title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ product.title }}</h5>
                     <p class="card-text">{{ product.description }}</p>
