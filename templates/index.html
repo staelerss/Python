@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Australia-market{% endblock %}
+{% block title %}PC Builders{% endblock %}
 {% block stylesheets %}
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/carousel/carousel.css">
 {% endblock %}
@@ -22,8 +22,8 @@
                     <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}">
                     <div class="container">
                         <div class="carousel-caption text-left">
-                            <h1>{{ slide.heading }}</h1>
-                            <p>{{ slide.subheading }}</p>
+                            <h1>{{ slides.title }}</h1>
+                            <p>{{ slides.description }}</p>
                             <p><a class="btn btn-lg btn-primary" href="#" role="button">Бронирование билетов </a></p>
                         </div>
                     </div>
