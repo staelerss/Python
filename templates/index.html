@@ -24,7 +24,7 @@
                         <div class="carousel-caption text-left">
                             <h1>{{ slides.title }}</h1>
                             <p>{{ slides.description }}</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Бронирование билетов </a></p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Выбор категории</a></p>
                         </div>
                     </div>
                 </div>
@@ -46,11 +46,11 @@
 
                 <img class="card-img-top" src="{{ product.image_src }}" alt="{{ product.image_title }}">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.heading }}</h5>
-                    <p class="card-text">{{ product.subheading }}</p>
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
                 </div>
                 <p>
-                    <small class="text-muted">Забронировать</small>
+                    <small class="text-muted">Купить</small>
                 </p>
 
             </div>
