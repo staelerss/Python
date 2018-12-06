@@ -38,7 +38,13 @@ def generate_links():
 @app.route('/')
 def index():
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM products')
+    cursor.execute("""
+    SELECT products.title AS title, 
+    products.description, products.price, 
+    image.title AS image_title, image.url AS image_url
+     FROM products INNER JOIN image
+    ON image.product_id = products.id    
+""")
     links = generate_links()
     products = cursor.fetchall()
     return render_template('index.html', links = links, slides = products)
