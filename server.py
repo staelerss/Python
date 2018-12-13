@@ -4,9 +4,9 @@ import pymysql
 app = Flask(__name__)
 
 connection =pymysql.connect(
-    host='192.168.33.10',
-    user='remote_user',
-    password='123123',
+    host='localhost',
+    user='root',
+    password='',
     db='shop',
     charset='utf8mb4',
     cursorclass=pymysql.cursors.DictCursor
@@ -14,9 +14,9 @@ connection =pymysql.connect(
 
 @app.route('/test/')
 def test():
-    cursor = connection.cursor()
-    cursor.execute('SELECT * FROM category')
-    result = cursor.fetchall()
+    with connection.cursor() as cursor:
+        cursor.execute('SELECT * FROM category')
+        result = cursor.fetchall()
 
     return str(result[0])
 
@@ -37,16 +37,18 @@ def generate_links():
 
 @app.route('/')
 def index():
-    cursor = connection.cursor()
-    cursor.execute("""
-    SELECT products.title AS title, 
-    products.description, products.price, 
-    image.title AS image_title, image.url AS image_url
-     FROM products INNER JOIN image
-    ON image.product_id = products.id    
-""")
+    with connection.cursor() as cursor:
+        cursor.execute("""
+        SELECT products.title AS title, 
+        products.description, products.price, 
+        image.title AS image_title, image.url AS image_url
+        FROM products LEFT JOIN image
+        ON image.product_id = products.id    
+        """)
+        products = cursor.fetchall()
+
     links = generate_links()
-    products = cursor.fetchall()
+
     return render_template('index.html', links = links, slides = products)
 
 
@@ -60,6 +62,27 @@ def hello_user(username=None):
         links=links
     )
 
+@app.route('/category/<category_id>')
+def category_page(category_id):
+    links = generate_links()
+
+    with connection.cursor() as cursor:
+        sql = '''
+        SELECT 
+            p.title,
+            description,
+            price,
+            i.title AS image_title,
+            url AS image_url
+        FROM product p
+        LEFT JOIN image i
+        ON p.id = i.product_id
+        WHERE id = %i
+         '''
+        cursor.execute(sql, (category_id,))
+        product = cursor.fetchall()
+
+    return render_template('index.html', links=links, slides=product)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True)
