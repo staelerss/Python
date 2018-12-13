@@ -39,11 +39,13 @@ def generate_links():
 def index():
     with connection.cursor() as cursor:
         cursor.execute("""
-        SELECT products.title AS title, 
-        products.description, products.price, 
-        image.title AS image_title, image.url AS image_url
-        FROM products LEFT JOIN image
-        ON image.product_id = products.id    
+        SELECT 
+            id AS category_id,
+            title AS heading,
+            title AS image_title,
+            description AS subheading,
+            image_url AS image_src
+        FROM category
         """)
         products = cursor.fetchall()
 
@@ -62,27 +64,36 @@ def hello_user(username=None):
         links=links
     )
 
-@app.route('/category/<category_id>')
+@app.route('/category/<int:category_id>')
 def category_page(category_id):
     links = generate_links()
 
     with connection.cursor() as cursor:
         sql = '''
-        SELECT 
+        SELECT
             p.title,
             description,
             price,
-            i.title AS image_title,
-            url AS image_url
-        FROM product p
-        LEFT JOIN image i
-        ON p.id = i.product_id
-        WHERE id = %i
+            s.title AS image_title,
+            url AS image_url,
+            p.cat_id as category_id
+        FROM products p
+        LEFT JOIN image s
+        ON p.id = s.product_id
+        WHERE cat_id = %s
          '''
         cursor.execute(sql, (category_id,))
         product = cursor.fetchall()
-
-    return render_template('index.html', links=links, slides=product)
+        cursor.execute('''
+        SELECT title
+        from category
+        WHERE id = %s
+        ''', (category_id,))
+        category=cursor.fetchall()
+    return render_template('category.html',
+                           links=links,
+                           slides=product,
+                           category=category)
 
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True)

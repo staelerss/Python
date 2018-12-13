@@ -20,12 +20,16 @@
                     {% set class = 'active' %}
                 {% endif %}
                 <div class="carousel-item {{ class }}">
-                    <img src="{{ slide.image_url }}" alt="{{ slide.image_title }}">
+                    <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}">
                     <div class="container">
                         <div class="carousel-caption text-left">
                             <h1>{{ slides.title }}</h1>
                             <p>{{ slides.description }}</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Выбор категории</a></p>
+
+                            <p><a class="btn btn-lg btn-primary"
+                                  href="{{url_for('category_page',
+                                  category_id=slide.category_id)}}" role="button">
+                                Выбор категории</a></p>
                         </div>
                     </div>
                 </div>
@@ -51,7 +55,10 @@
                     <p class="card-text">{{ product.description }}</p>
                 </div>
                 <p>
-                    <small class="text-muted">Купить</small>
+                    <a class="btn btn-lg btn-primary"
+                                  href="{{url_for('category_page',
+                                  category_id=product.category_id)}}" role="button">
+                                Выбор категории</a>
                 </p>
 
             </div>
