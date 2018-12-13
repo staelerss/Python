@@ -4,7 +4,7 @@
   tasks:
     - name: Killing ubuntu auto-update script
       command: pkill --full /usr/bin/unattended-upgrade
-      beccome: true
+      become: true
       register: kill_result
       failed_when: kill_result.rc > 1
       changed_when: kill_result.rc == 0
