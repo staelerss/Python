@@ -4,3 +4,4 @@
 Vagrantfile
 ubuntu-xenial-16.04-cloudimg-console.log
 !.idea/dataSource.xml
+repository/__pycache__/
