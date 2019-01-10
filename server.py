@@ -12,11 +12,11 @@ def index():
     slides = list()
     for x in categories:
         slide = {
-             'category_id': x.get('id'),
-             'heading': x.get('title'),
-             'image_title': x.get('title'),
-             'subheading': x.get('description'),
-             'image.src': x.get('image_url')
+            'category_id': x.get('id'),
+            'heading': x.get('title'),
+            'image_title': x.get('title'),
+            'subheading': x.get('description'),
+            'image_src': x.get('image_url')
         }
         slides.append(slide)
     return render_template('index.html', links=links, slides=slides)
