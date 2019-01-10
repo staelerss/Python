@@ -4,21 +4,21 @@
 
 {% block content %}
 
-    <div class="card-deck">
-        {% for product in products %}
-            <div class="card">
-                <img class="card-img-top" src="{{ product.image_url }}" alt="{{ product.image_title }}">
-                <div class="card-body">
-                    <h5 class="card-title">{{ product.title }}</h5>
-                    <p class="card-text">{{ product.description }}</p>
-                </div>
-                {% if product.price %}
-                    <small class="text-muted">Купить</small>
-                {% else %}
-                    <small class="text-muted">Нет в наличии</small>
-                {% endif %}
-            </div>
-        {% endfor %}
+<div class="card-deck">
+    {% for product in products %}
+    <div class="card">
+        <img class="card-img-top" src="{{ product.image_src }}" alt="{{ product.image_title }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.title }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+        </div>
+        {% if product.price %}
+        <small class="btn btn-primary">Купить</small>
+        {% else %}
+        <small class="text-muted">Нет в наличии</small>
+        {% endif %}
     </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
