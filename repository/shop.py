@@ -16,8 +16,8 @@ def find_category(category_id):
         SELECT 
             id,
             title,
-            Description,
-            Image_URL
+            description,
+            image_url
         FROM category
         WHERE id = %s
         ''', (category_id,))
@@ -32,8 +32,8 @@ def find_all_categories():
         SELECT 
             id,
             title,
-            Description,
-            Image_URL
+            description,
+            image_url
         FROM category
         """)
         categories = cursor.fetchall()
@@ -50,7 +50,7 @@ def find_products_by_category(category_id):
             description,
             price,
             cat_id,
-            i.id AS image_id,
+            i.url AS image_src,
             i.title AS image_title
             FROM products p
             LEFT JOIN image i ON p.id = i.product_id
