@@ -3,10 +3,10 @@
 {% block title %}PC Builders{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" href="https://getbootstrap.com/docs/4.1/examples/carousel/carousel.css">
-<link rel="stylesheet" href="/templates/main.css">
+<link rel="stylesheet" href="/static/main.css">
 {% endblock %}
 {% block content %}
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3500">
     <ol class="carousel-indicators">
         {% for slide in slides %}
         <li data-target="#myCarousel" data-slide-to="{{ loop.index0 }}"
@@ -20,11 +20,11 @@
         {% set class = 'active' %}
         {% endif %}
         <div class="carousel-item {{ class }}">
-            <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}">
+            <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}" class="center-cropped">
             <div class="container">
-                <div class="carousel-caption text-left">
-                    <h1>{{ slides.title }}</h1>
-                    <p>{{ slides.description }}</p>
+                <div class="carousel-caption d-none d-md-block text-left text-outline">
+                    <h5>{{ slide.heading }}</h5>
+                    <p>{{ slide.subheading }}</p>
                     <a class="btn btn-lg btn-primary"
                           href="{{url_for('category_page',
                                   category_id=slide.category_id)}}" role="button">
@@ -48,7 +48,7 @@
     {% for product in slides %}
     <div class="card">
 
-        <img class="card-img-top" src="{{ product.image_src }}" alt="{{ product.image_title }}">
+        <img class="card-img-top center-cropped" src="{{ product.image_src }}" alt="{{ product.image_title }}">
         <div class="card-body">
             <h5 class="card-title">{{ product.title }}</h5>
             <p class="card-text">{{ product.description }}</p>
