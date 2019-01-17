@@ -41,6 +41,14 @@ def category_page(category_id):
         links=links,
     )
 
+@app.route('/cart')
+def cart():
+    links = generate_links()
+    return render_template(
+        'cart.html',
+        links = links
+    )
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', debug=True)

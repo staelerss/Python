@@ -8,14 +8,15 @@
     {% for product in products %}
     <div class="card">
         <img class="card-img-top" src="{{ product.image_src }}" alt="{{ product.image_title }}">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
             <h5 class="card-title">{{ product.title }}</h5>
             <p class="card-text">{{ product.description }}</p>
         </div>
         {% if product.price %}
-        <small class="btn btn-primary">Купить</small>
+        <b class="card-text mt-auto">{{ product.price}}$</b>
+        <small class="btn btn-primary btn-lg">Buy</small>
         {% else %}
-        <small class="text-muted">Нет в наличии</small>
+        <small class="text-muted btn btn-secondary btn-lg" disabled>Out of stock</small>
         {% endif %}
     </div>
     {% endfor %}

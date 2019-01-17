@@ -22,7 +22,7 @@
         <div class="carousel-item {{ class }}">
             <img src="{{ slide.image_src }}" alt="{{ slide.image_title }}" class="center-cropped">
             <div class="container">
-                <div class="carousel-caption d-none d-md-block text-left text-outline">
+                <div class="carousel-caption d-none d-md-block text-left">
                     <h5>{{ slide.heading }}</h5>
                     <p>{{ slide.subheading }}</p>
                     <a class="btn btn-lg btn-primary"
@@ -43,12 +43,12 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
+<b>Categories</b>
 <div class="card-group">
     {% for product in slides %}
     <div class="card">
 
-        <img class="card-img-top center-cropped" src="{{ product.image_src }}" alt="{{ product.image_title }}">
+        <img class="card-img-bottom center-cropped" src="{{ product.image_src }}" alt="{{ product.image_title }}">
         <div class="card-body">
             <h5 class="card-title">{{ product.title }}</h5>
             <p class="card-text">{{ product.description }}</p>

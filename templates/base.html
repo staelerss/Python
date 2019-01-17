@@ -18,13 +18,16 @@
             <span class="fas fa-caret-down"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav d-flex flex-row" style="width: 100%">
                 {% for title, link in links.items() %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Products</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" style="text-align: right" href='/cart'>Cart</a>
                     </li>
                 {% endfor %}
             </ul>
