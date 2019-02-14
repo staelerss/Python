@@ -17,7 +17,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
+        <tr class="cart-position">
             <td data-th="Product">
                 <div class="row">
                     <div class="col-sm-2 hidden-xs"><img
@@ -29,18 +29,18 @@
                     </div>
                 </div>
             </td>
-            <td data-th="Price">1499$</td>
+            <td data-th="Price" class="price">1499$</td>
             <td data-th="Quantity" class="text-center">
-                <button class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-plus"></i></button>
-                <input type="text" class="form-control text-center" id="amount" contenteditable="false" value="1">
-                <button class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-minus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus plus-button"></i></button>
+                <input type="text" class="form-control text-center amount" disabled value="1">
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus minus-button"></i></button>
             </td>
-            <td data-th="Subtotal" class="text-center">1499$</td>
+            <td data-th="Subtotal" class="text-center sum">1499$</td>
             <td class="actions" data-th="">
                 <button class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
-        <tr>
+        <tr class="cart-position">
             <td data-th="Product">
                 <div class="row">
                     <div class="col-sm-2 hidden-xs"><img
@@ -52,13 +52,36 @@
                     </div>
                 </div>
             </td>
-            <td data-th="Price">249$</td>
+            <td data-th="Price" class="price">249$</td>
             <td data-th="Quantity" class="text-center">
-                <button class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-plus"></i></button>
-                <input type="text" class="form-control text-center" id="amount2" contenteditable="false" value="1">
-                <button class="btn btn-outline-success btn-sm btn-block"><i class="fas fa-minus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i></button>
+                <input type="text" class="form-control text-center amount" disabled value="1">
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i></button>
             </td>
-            <td data-th="Subtotal" class="text-center">1499$</td>
+            <td data-th="Subtotal" class="text-center sum">249$</td>
+            <td class="actions" data-th="">
+                <button class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
+            </td>
+        </tr>
+        <tr class="cart-position">
+            <td data-th="Product">
+                <div class="row">
+                    <div class="col-sm-2 hidden-xs"><img
+                            src="https://biggeek.ru/files/products/at-galaxy-a8-2018-duos-a530f-sm-a530fzkdato-frontblack-91918131.435x435.jpeg?013aaf3d9c2e3d074501e45071127c81"
+                            alt="..." class="img-responsive"/></div>
+                    <div class="col-sm-10">
+                        <h4 class="nomargin">Samsung Galaxy A8 32gb Black</h4>
+                        <p contenteditable>Samsung that pretends to be Xiaomi</p>
+                    </div>
+                </div>
+            </td>
+            <td data-th="Price" class="price">262$</td>
+            <td data-th="Quantity" class="text-center">
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i></button>
+                <input type="text" class="form-control text-center amount" disabled value="1">
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i></button>
+            </td>
+            <td data-th="Subtotal" class="text-center sum">262$</td>
             <td class="actions" data-th="">
                 <button class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
             </td>
@@ -68,7 +91,7 @@
         <tr>
             <td><a href="/" class="btn btn-block"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
-            <td><a href="/shipment" class="btn btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+            <td><a href="#" class="btn btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
         </tr>
         </tfoot>
     </table>
