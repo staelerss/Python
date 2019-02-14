@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+<link rel="stylesheet" href="../static/main.css">{% extends "base.html" %}
 
 {% block title %}PC Builders{% endblock %}
 
@@ -31,9 +31,11 @@
             </td>
             <td data-th="Price" class="price">1499$</td>
             <td data-th="Quantity" class="text-center">
-                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus plus-button"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i
+                        class="fas fa-plus plus-button"></i></button>
                 <input type="text" class="form-control text-center amount" disabled value="1">
-                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus minus-button"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i
+                        class="fas fa-minus minus-button"></i></button>
             </td>
             <td data-th="Subtotal" class="text-center sum">1499$</td>
             <td class="actions" data-th="">
@@ -54,9 +56,11 @@
             </td>
             <td data-th="Price" class="price">249$</td>
             <td data-th="Quantity" class="text-center">
-                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i>
+                </button>
                 <input type="text" class="form-control text-center amount" disabled value="1">
-                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i>
+                </button>
             </td>
             <td data-th="Subtotal" class="text-center sum">249$</td>
             <td class="actions" data-th="">
@@ -77,45 +81,58 @@
             </td>
             <td data-th="Price" class="price">262$</td>
             <td data-th="Quantity" class="text-center">
-                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block plus-button"><i class="fas fa-plus"></i>
+                </button>
                 <input type="text" class="form-control text-center amount" disabled value="1">
-                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i></button>
+                <button class="btn btn-outline-success btn-sm btn-block minus-button"><i class="fas fa-minus"></i>
+                </button>
             </td>
             <td data-th="Subtotal" class="text-center sum">262$</td>
             <td class="actions" data-th="">
                 <button class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
+        <tr>
+            <td class="container">
+                <form>
+                    <label>Personal info:</label>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name">
+                        </div>
+                    </div>
+                </form>
+                <div class="form-row">
+                    <label for="emailInput">Your email address:</label>
+                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                           placeholder="email@example.com">
+                </div>
+                <label>ZIP Code:</label>
+                <div class="form-row">
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-row">
+                    <label for="shipmentMethod">Select shipment method:</label>
+                    <select class="form-control" id="shipmentMethod">
+                        <option>Почта России + 5$</option>
+                        <option>EMS + 7$</option>
+                        <option>СДЭК + 10$</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <label>Total:</label>
+
+                </div>
+            </td>
+        </tr>
         </tbody>
-        <td class="container">
-    <form>
-        <label>Personal info:</label>
-        <div class="form-row">
-            <div class="col">
-                <input type="text" class="form-control" placeholder="First name">
-            </div>
-            <div class="col">
-                <input type="text" class="form-control" placeholder="Last name">
-            </div>
-        </div>
-    </form>
-    <div class="form-row">
-        <label for="emailInput">Your email address:</label>
-        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
-               placeholder="email@example.com">
-    </div>
-    <label>ZIP Code:</label>
-    <div class="form-row">
-        <input type="text" class="form-control">
-    </div>
-    <div class="form-row">
-        <label for="shipmentMethod">Select shipment method:</label>
-        <select class="form-control" id="shipmentMethod">
-            <option>Почта России</option>
-            <option>EMS</option>
-            <option>СДЭК</option>
-    </div>
-     </td>
         <tfoot>
         <tr>
             <td><a href="/" class="btn btn-block"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
