@@ -8,7 +8,7 @@
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
-        <tr>
+        <tr class="table">
             <th style="width:50%">Product</th>
             <th style="width:10%">Price</th>
             <th style="width:8%">Quantity</th>
@@ -92,55 +92,47 @@
                 <button class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
-        <tr>
-            <td class="container">
-                <form>
-                    <label>Personal info:</label>
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="First name">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name">
-                        </div>
-                    </div>
-                </form>
-                <div class="form-row">
-                    <label for="emailInput">Your email address:</label>
-                    <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
-                           placeholder="email@example.com">
-                </div>
-                <label>ZIP Code:</label>
-                <div class="form-row">
-                    <input type="text" class="form-control">
-                </div>
-                <div class="form-row">
-                    <label for="shipmentMethod">Select shipment method:</label>
-                    <select class="form-control" id="shipmentMethod">
-                        <option>Почта России + 5$</option>
-                        <option>EMS + 7$</option>
-                        <option>СДЭК + 10$</option>
-                    </select>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
-                    <label>Total:</label>
-
-                </div>
-            </td>
-        </tr>
-        </tbody>
-        <tfoot>
-        <tr>
-            <td><a href="/" class="btn btn-block"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
-            <td colspan="2" class="hidden-xs"></td>
-            <td><a href="#" class="btn btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
-        </tr>
-        </tfoot>
     </table>
+    <form>
+        <label>Personal info:</label>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+    </form>
+    <div class="form-row">
+        <label for="emailInput">Your email address:</label>
+        <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+               placeholder="email@example.com">
+    </div>
+    <label>ZIP Code:</label>
+    <div class="form-row">
+        <input aria-label="zipcode" type="text" class="form-control">
+    </div>
+    <div class="form-row">
+        <label for="shipmentMethod">Select shipment method:</label>
+        <select class="form-control" id="shipmentMethod">
+            <option>Почта России + 5$</option>
+            <option>EMS + 7$</option>
+            <option>СДЭК + 10$</option>
+        </select>
+    </div>
+    <div>Total:</div>
+    <div class="total">
+        0
+    </div>
 </div>
+</tbody>
+<tfoot>
+<div>
+    <div><a href="/" class="btn btn-block"><i class="fa fa-angle-left"></i> Continue Shopping</a></div>
+    <div colspan="2" class="hidden-xs"></div>
+    <div><a href="#" class="btn btn-block">Checkout <i class="fa fa-angle-right"></i></a></div>
+</div>
+</tfoot>
 <script type="text/javascript" src="/static/cart.js"></script>
 {% endblock %}
