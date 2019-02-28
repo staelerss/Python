@@ -14,8 +14,12 @@ cartPositions.forEach((cartPosition) => {
     sum.innerHTML = parseInt(amount.value) * price;
 
     const total = cartPosition.querySelector('.total');
-    /*total.innerHTML = parseInt(sum.value) +*/
-
+    let a = 0;
+    console.log('table'.length);
+    for (let i = 0; i < 'table'.length; i++){
+        a += parseInt(cartPosition.querySelector('.sum'));
+    }
+    total.innerHTML = a;
     plusButton.addEventListener('click', () => {
         const amountValue = increment(amount.value);
         sum.innerHTML = amountValue * price;
