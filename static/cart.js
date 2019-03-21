@@ -19,7 +19,7 @@ cartPositions.forEach((cartPosition) => {
     for (let i = 0; i < 'table'.length; i++){
         a += parseInt(cartPosition.querySelector('.sum'));
     }
-    total.innerHTML = a;
+    // total.innerHTML = parseInt(cartPosition.querySelector('.sum');
     plusButton.addEventListener('click', () => {
         const amountValue = increment(amount.value);
         sum.innerHTML = amountValue * price;
@@ -32,4 +32,13 @@ cartPositions.forEach((cartPosition) => {
         amount.value = amountValue;
     })
 })
+
+cart = localStorage.getItem('cart');
+isInCart =
+const buyButtons = document.querySelectorAll('.buyButton');
+Array.from(buyButtons).forEach(buyButton => buyButton.addEventListener('click', (e)=> {
+    e.preventDefault();
+
+}))
+
 
