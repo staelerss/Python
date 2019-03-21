@@ -39,3 +39,5 @@ UPDATE `shop`.`products` SET `price` = '' WHERE (`id` = '4');
 UPDATE `shop`.`image` SET `url` = 'https://biggeek.ru/files/products/at-galaxy-a8-2018-duos-a530f-sm-a530fzkdato-frontblack-91918131.435x435.jpeg?013aaf3d9c2e3d074501e45071127c81' WHERE (`id` = '3');
 
 UPDATE `shop`.`products` SET `description` = 'Get the pure Android experience with the price of a budget phone' WHERE (`id` = '2');
+
+UPDATE `shop`.`image` SET `url` = 'https://avatars.mds.yandex.net/get-mpic/364668/img_id1098725608814326016.jpeg/9hq' WHERE (`id` = '3');
