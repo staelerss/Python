@@ -14,12 +14,12 @@
         </div>
         {% if product.price %}
         <b class="card-text mt-auto">{{ product.price}}$</b>
-        <small class="btn btn-primary btn-lg">Buy</small>
+        <small class="btn btn-primary btn-lg buyButton">Buy</small>
         {% else %}
         <small class="text-muted btn btn-secondary btn-lg" disabled>Out of stock</small>
         {% endif %}
     </div>
     {% endfor %}
 </div>
-
+<script type="text/javascript" src="/static/cart.js"></script>
 {% endblock %}
