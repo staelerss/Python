@@ -14,7 +14,7 @@
    - `print ("%s" + count)` ==> 6
    - `print ("%2f" + count)` ==> 6.00
    
-     -    %[letter] changes the type of "a"
+     -    letter changes the type of "a"
 
  * Variables:
  1. `int = 1`
