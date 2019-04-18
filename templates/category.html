@@ -3,7 +3,9 @@
 {% block title %}PC Builders{% endblock %}
 
 {% block content %}
-
+ <script type="text/javascript">
+     const products = []
+ </script>
 <div class="card-deck">
     {% for product in products %}
     <div class="card">
@@ -14,10 +16,19 @@
         </div>
         {% if product.price %}
         <b class="card-text mt-auto">{{ product.price}}$</b>
-        <small class="btn btn-primary btn-lg buyButton">Buy</small>
+        <small class="add-button btn btn-primary btn-lg buyButton" data-id="{{product.id}}">Buy</small>
         {% else %}
-        <small class="text-muted btn btn-secondary btn-lg" disabled>Out of stock</small>
+        <small class="text-muted btn btn-secondary btn-lg OoSButton" disabled>Out of stock</small>
         {% endif %}
+        <script type="text/javascript">
+            products[{{product.id}}] = {
+                id: {{product.id}},
+                title: '{{product.title}}',
+                sum: 0,
+                amount: 1,
+                price: {{ product.price }},
+            }
+        </script>
     </div>
     {% endfor %}
 </div>
